@@ -1,0 +1,29 @@
+body {
+    background-color: whitesmoke;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+a {
+    color: green
+}
+
+a:hover {
+    color: blue;
+}
+
+a:active {
+    color: purple;
+}
+
+main {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+figure {
+    width: auto;
+}
