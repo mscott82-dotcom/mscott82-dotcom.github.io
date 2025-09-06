@@ -1,19 +1,20 @@
 body {
-    background-color: whitesmoke;
+    background-color: burlywood;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+    color: yellow
 }
 
 a {
-    color: green
+    color: yellow
 }
 
 a:hover {
-    color: blue;
+    color: red;
 }
 
 a:active {
-    color: purple;
+    color: brown;
 }
 
 main, h2 {
