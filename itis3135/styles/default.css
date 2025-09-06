@@ -16,14 +16,18 @@ a:active {
     color: purple;
 }
 
-main {
+main, h2 {
     text-align: center;
 }
 
-h2 {
-    text-align: center;
+img {
+    max-width: 200px;
+    max-height: 200px;
 }
-
 figure {
-    width: auto;
+    text-align: center;
+    font-style: italic;
+}
+li, .contract {
+    text-align: left;
 }
