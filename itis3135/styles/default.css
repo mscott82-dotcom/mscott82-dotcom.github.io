@@ -1,16 +1,18 @@
+/* color palette sourced from coloors: */
+/* https://coolors.co/134611-3e8914-3da35d-96e072-e8fccf */
 body {
-    background-color: burlywood;
+    background-color: #3E8914;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-    color: rgb(252, 252, 93)
+    color: #E8FCCF
 }
 
 a {
-    color: rgb(205, 255, 130)
+    color: #96E072
 }
 
 a:hover {
-    color: rgb(89, 221, 177);
+    color: #b2ff36;
 }
 
 a:active {
@@ -33,7 +35,7 @@ li, .contract {
     text-align: left;
 }
 footer, header {
-    border: 2px dashed  rgba(33, 87, 69, 0.25);
+    border: 2px outset rgba(26, 219, 155, 0.25);
     border-radius: 25px;
     background-color:  rgba(128, 207, 181, 0.25);
     padding: 15px;
