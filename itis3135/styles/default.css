@@ -2,19 +2,19 @@ body {
     background-color: burlywood;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
-    color: yellow
+    color: rgb(252, 252, 93)
 }
 
 a {
-    color: yellow
+    color: rgb(205, 255, 130)
 }
 
 a:hover {
-    color: red;
+    color: rgb(89, 221, 177);
 }
 
 a:active {
-    color: brown;
+    color: rgb(165, 50, 50);
 }
 
 main, h2 {
@@ -31,4 +31,10 @@ figure {
 }
 li, .contract {
     text-align: left;
+}
+footer, header {
+    border: 2px dashed  rgba(33, 87, 69, 0.25);
+    border-radius: 25px;
+    background-color:  rgba(128, 207, 181, 0.25);
+    padding: 15px;
 }
