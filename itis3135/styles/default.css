@@ -9,8 +9,27 @@ body {
 
 main {
     max-width: 1920px;
-    width: 90%;
     margin: 0 auto;
+}
+/**MOBILE PHONE **/
+@media only screen and (min-width: 480px) {
+    main{
+        width: 80%;
+    }
+
+}
+/**TABLET/IPAD **/
+@media only screen and (resolution: 300dpi) {
+    main{
+        width: 90%;
+    }
+
+}
+/**LAPTOP/DESKTOP **/
+@media only screen and (min-width: 992px) {
+    main{
+        width: 100%;
+    }
 }
 
 a {
