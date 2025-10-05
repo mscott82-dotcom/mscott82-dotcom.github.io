@@ -7,6 +7,12 @@ body {
     color: #E8FCCF
 }
 
+main {
+    max-width: 1920px;
+    width: 90%;
+    margin: 0 auto;
+}
+
 a {
     color: #96E072
 }
@@ -55,3 +61,4 @@ footer {
 footer > nav, footer > a {
     height: 5px;;
 }
+
