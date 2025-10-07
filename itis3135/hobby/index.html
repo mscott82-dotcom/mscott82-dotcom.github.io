@@ -25,14 +25,7 @@ a:hover {
 a:active {
     color: rgb(165, 50, 50);
 }
-img {
-    max-width: 250px;
-    max-height: 250px;
-}
-figure {
-    text-align: center;
-    font-style: italic;
-}
+
 li, .contract {
     text-align: left;
 }
@@ -56,28 +49,56 @@ nav {
     border: 3px #15678A inset;
     border-radius: 5px;
 }
-#donutimg {
+#donutimg, #rabbitimg, #blendimg {
     max-width: 300px;
     max-height: 300px;
     border: 3px #15678A inset;
     border-radius: 5px;
 
 }
-p {
-    text-align: left;
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-bottom: 5px;
+p, h3 {
+    display: flex;
+            position: relative;
+            text-align: left;
+            margin-left: 20px;
+            top: 60px;
+            max-width: 30%;
 }
-figcaption {
-    color: #8AC7E5;
-    font-weight: bold;
+h3 {
+    font-style: italic;
+}
+h2 {
+    font-size: 30px;
+    display: flex;
+            justify-content: center;
+            position: relative;
+
+}
+figure {
+    text-align: center;
+    font-style: italic;
+    display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+
+            max-width: 50%;
+
+}
+
+img {
+    max-width: 250px;
+    max-height: 250px;
+    max-width: 100%;
+    height: auto;
+
 }
 .divider {
     border: 1px #214583 dotted;
     margin-left: 20%;
     margin-right: 20%;
 }
+
 table {
     display: flex;
     justify-content: center;
@@ -93,6 +114,61 @@ td {
     padding-left: 15px;
     padding-top: 5px;
 }
+
+
+section {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+flex-wrap: wrap;
+gap: 30px;
+padding: 20px;
+box-sizing: border-box;
+}
+
+
+.textblock {
+flex: 1 1 350px;
+max-width: 600px;
+display: flex;
+flex-direction: column;
+color: #72BCE0;
+}
+
+
+figure {
+  flex: 0 1 40%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-style: italic;
+  box-sizing: border-box;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 3px #15678A inset;
+}
+
+figcaption {
+color: #8AC7E5;
+font-weight: bold;
+margin-top: 8px;
+text-align: center;
+}
+
+p, h3 {
+  text-align: left;
+  position: static;
+  margin: 0 0 1em 0;
+  max-width: 100%;
+}
+
 
 section {
     display: none;
@@ -125,13 +201,16 @@ footer {
         <main>
             <div class="divider"></div>
             <nav>
-                <a href="#who">About</a> » <a href="#what">Home</a> » <a href="#when">When</a> » <a href="#where">Where</a> » <a href="#how">How</a> » <a href="#why">Why</a> 
+                <a href="#who">Who</a> » <a href="#what">Home</a> » <a href="#when">When</a> » <a href="#where">Where</a> » <a href="#how">How</a> » <a href="#why">Why</a> 
             </nav>
             <div class="divider"></div>
             <section id="who">
-                <h2>About Me</h2>
+                <h2>Who</h2>
+                <div class="textblock">
+                <h3>About Me</h3>
                 <p>I've been using Blender for about 5 years now, starting out in late 2020 and slowly learning how to use the program.</p>
                 <p>I find it to be pretty relaxing, its easy to lose track of time and spend countless hours on a single project. Don't get me wrong, theres plenty of times when it can be frustrating - like for example having an idea for a scene but not having the technical knowledge to achieve it yet. Each project is very rewarding though, if you're someone who's done other forms of art then you understand the sense of pride & accomplishment you feel for a completed project.</p>
+                </div>
                 <figure>
                     <img src="images\cityNoiseDARK2.png" alt="image of a cityscape" id="cityimg">
                     <figcaption>I tend to work on a lot of environment centered scenes</figcaption>
@@ -140,17 +219,23 @@ footer {
 
             <section  id="what">
                 <h2>Home</h2>
+                <div class="textblock">
+                <h3>What is Blender?</h3>
                 <p>Blender is a completely free, open-source 3D modeling and animation program. </p>
                 <p>In Blender, you can create a near limitless variety of content. The program supports Modeling, Sculpting, Animating, Compositing, VFX, Video Editing, and even 2D Animation.</p>
+                </div>
                 <figure>
-                    <img src="images\plubo.png" alt="image of a rabbit">
+                    <img src="images\plubo.png" alt="image of a rabbit" id="rabbitimg">
                     <figcaption>Blender's sculpting toolset is capable of producing mind-boggling visuals.</figcaption>
                 </figure>
             </section>
 
             <section id="when">
                 <h2>When</h2>
+                <div class="textblock">
+                <h3>When do I use Blender</h3>
                 <p>As long as you have a computer in front of you, you can do something in Blender.</p>
+                </div>
                 <figure>
                     <img src="" alt="img">
                     <figcaption></figcaption>
@@ -158,19 +243,25 @@ footer {
             </section>
 
             <section id="where">
-                <h2>Where to download Blender</h2>
+                <h2>Where</h2>
+                <div class="textblock">
+                <h3>Where can I download Blender?</h3>
                 <p>Blender is available for download on their official website, it is also available on Steam which may be more convienent for you if you're interested in receiving updates as soon as they arrive.</p>
+                </div>
                 <figure>
-                    <img src="images\Blender1.jpg" alt="blender">
+                    <img src="images\Blender1.jpg" alt="blender" id="blendimg">
                     <figcaption><a href="https://www.blender.org/">Blender's Website</a></figcaption>
                 </figure>
             </section>
             
             <section id="how">
-                <h2>How to use Blender</h2>
+                <h2>How </h2>
+                <div class="textblock">
+                <h3>How do I use Blender?</h3>
                 <p>Blender is completely free for anyone to use. Going on their website lets you download any version of the program for $0. Within seconds you could have the program ready to go on your computer.</p>
                 <p>The only thing that can hold you back is the limit of your hardware are the only obstacles you'll face. With every advanced 3D software out there, there is absolutely a learning curve though.</p> 
                 <p>Personally, it took me a little over a year of learning Blender before I was making stuff I felt satisfied with. Even now, after 5 years of experience, there is still so much to the program that I haven't learned yet. Luckily, there exists an endless number of tutorials on sites like YouTube covering anything from the basics and up. Patience is your friend.</p>
+                </div>
                 <figure>
                     <img src="images/donut.jpg" alt="img" id="donutimg">
                     <figcaption><a href="https://youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z&si=x4D0IkcF3ZiUiEX_">Blender 4.0 Beginner Tutorial</a> by far the most popular tutorial online, covering most major aspects of the program as you create a donut.</figcaption>
@@ -178,9 +269,12 @@ footer {
             </section>
 
             <section id="why">
-                <h2>Why I use Blender</h2>
+                <h2>Why</h2>
+                <div class="textblock">
+                <h3>Why I choose to use Blender</h3>
                 <p>As a college student with not that much money to spare, the fact that Blender is freeis a very big selling point for me.</p>
                 <p>More industry standard alternatives like Maya and 3DSMax require a paid subscription, usually $100+ monthly. If you're someone who just wants to create 3D art for fun, it wouldn't be very economical to pay hundreds of dollars a month for a program you may not be using often enough to even begin to justify the cost. </p>
+                </div>
                 <figure>
                     <table>
                         <tr>
