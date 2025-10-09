@@ -36,7 +36,14 @@
             background-color: rgb(111, 111, 168);
             padding: 1px 0;
         }
-
+        td {
+            padding: 5px;
+            border: 1px black solid;
+        }
+        .inline {
+            display: flex;
+            justify-content: center;
+        }
     </style>
 <body>
     <header>
@@ -51,6 +58,32 @@
         <p>
             Welcome to Magnificent Sealion, the number one store to supply all of your illustrative endeavors. From pencils to paintings, we've got what you need.
         </p>
+                <table>
+                        <tr>
+                            <th></th>
+                            <th>Our products</th>
+                            <th>Competitors</th>
+                            <th>Offbrand alternatives</th>
+                        </tr>
+                        <tr>
+                            <td>Cost</td>
+                            <td>Affordable</td>
+                            <td>Overpriced</td>
+                            <td>Cheap</td>
+                        </tr>
+                        <tr>
+                            <td>Quality</td>
+                            <td>The very best</td>
+                            <td>Mediocre</td>
+                            <td>Terrible</td>
+                        </tr>
+                    </table>
+                    <p class="inline">Interested in making an order?</p>
+                    <nav class="inline">
+                        <p>Make a <a href="">Phone call</a>.</p>
+                        <p>Order <a href="">Online</a>.</p>
+                        <p>Visit our <a href="">Locations</a>.</p>
+                    </nav>
     </main>
     <footer>
         <p>"Where the only limit is your canvas" ©2025 Magnificent Sealion</p>
