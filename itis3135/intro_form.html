@@ -6,6 +6,26 @@
     <title>
         ITIS 3135 | Matthew Scott's | Magnificent Sealion | Intro Form
     </title>
+    <style>
+        .Block {
+            border: 1px green solid;
+
+            display:flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        .divider {
+            margin: 25px;
+            border: 1px black solid;
+
+        }
+        .ButtonBlock {
+            display:  flex;
+            margin: 30px;
+            flex-direction: column;
+            width: 30%;
+        }
+    </style>
 </head>
     <body>
         <header>
@@ -13,32 +33,100 @@
         </header>
         <main>
             <h2>Intro Form</h2>
+            <h3>Please submit the form below.</h3>
             <form id="form">
-            <label>
-            Name:
-            <input type="text" id="name" required>
-            </label>
-            <br><br>
-            <label>
-            Email:
-            <input type="email" id="email" required>
-            </label>
-            <br><br>
+            <div class="Block">
+            <label>First Name*</label>
+            <input type="text" name="firstName" required value="Matthew" placeholder="Enter your first name">
 
+            <label>Middle Name or Initial</label>
+            <input type="text" name="middleName" value="C." placeholder="Enter your middle name or initial">
+
+            <label>Nickname / Preferred Name</label>
+            <input type="text" name="nickname" value="Matt" placeholder="Enter your nickname">
+
+            <label>Last Name*</label>
+            <input type="text" name="lastName" required value="Scott" placeholder="Enter your last name">
+            </div>
+            <div class="Block">
+            <label>Acknowledgment Statement*</label>
+            <input type="text" name="ackStatement" required value="I acknowledge this information is true." placeholder="Type acknowledgment statement">
+
+            <label>Acknowledgment Date*</label>
+            <input type="date" name="ackDate" required value="2025-10-26">
+            </div>
+            <div class="Block">
+            <label>Mascot Adjective*</label>
+            <input type="text" name="mascotAdj" required value="Magnificent" placeholder="Enter a describing word">
+
+            <label>Mascot Animal*</label>
+            <input type="text" name="mascotAnimal" required value="Sealion" placeholder="Enter an animal">
+            </div>
+            <div class="divider"></div>
+            <input type="text" name="divider" required value="~" placeholder="Enter a divider (|, ~, ♥️, etc.)">
+            <div class="Block">
+            <label>Picture*</label>
+            <input type="file" name="picture" accept="image/*">
+            <img src="https://via.placeholder.com/150" alt="Default Image">
+
+            <label>Picture Caption*</label>
+            <input type="text" name="caption" required value="My professional photo" placeholder="Enter caption for the picture">
+            </div>
+            <div class="Block">
+            <label>Personal Statement*</label>
+            <textarea name="personalStatement" required placeholder="Write your personal statement">I'm a dedicated student passionate about technology and learning.</textarea>
+
+            <label>7 Main Bullets (Personal Background, etc)*</label>
+            <textarea name="mainBullets" required placeholder="List your main bullet points">Personal Background, Education, Interests, Goals, Skills, Values, Fun Facts</textarea>
+            </div>
+            <h4>Courses</h4>
             <div id="courses">
-            <div class="course-input">
-                <input type="text" name="course[]" placeholder="Enter a course" required>
+            <div class="course">
+                <div class="Block">
+                <label>Department*</label>
+                <input type="text" name="dept" required value="ITIS" placeholder="e.g. CS">
+
+                <label>Number*</label>
+                <input type="text" name="courseNum" required value="3135" placeholder="e.g. 101">
+
+                <label>Name*</label>
+                <input type="text" name="courseName" required value=" Front End Web App Development" placeholder="e.g. Front End Web App Development">
+
+                <label>Reason*</label>
+                <input type="text" name="reason" required value="To learn Front-End Web Dev." placeholder="Why did you choose this course?">
             </div>
             </div>
+            </div>
+            <div class="ButtonBlock">
+            <button type="button" id="addCourse">Add Course</button>
+            </div>
+            <div class="Block">
+            <label>Quote*</label>
+            <input type="text" name="quote" required value="The only limit is your mind." placeholder="Enter your favorite quote">
 
-            <button type="button" id="addCourseBtn">Add Another Course</button>
-            <br><br>
+            <label>Quote Author*</label>
+            <input type="text" name="quoteAuthor" required value="Unknown" placeholder="Enter the author of the quote">
 
+            <label>Funny Thing (optional)</label>
+            <input type="text" name="funnyThing" value="I can create webpages" placeholder="Enter something funny">
+
+            <label>Something I would like to share (optional)</label>
+            <input type="text" name="share" value="I love compsci and nature." placeholder="Enter something you'd like to share">
+
+            <label>5 Links*</label>
+            <textarea name="links" required placeholder="Add up to 5 links separated by commas">https://linkedin.com/in/alexjohnson, https://github.com/alexjohnson</textarea>
+            </div>
+            <div>
+            <div class="ButtonBlock">
             <button type="submit">Submit</button>
-            <button type="button" id="resetBtn">Reset</button>
+            <button type="reset">Reset</button>
+            <button type="button" id="clearBtn">Clear</button>
+            <div class="divider"></div>
+            </div>
+            </div>
         </form>
 
-        <div id="result"></div>
+        <div id="output"></div>
 
         <script src="scripts/introduction.js"></script>
         </main>
