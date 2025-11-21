@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style1.css">
+  <title>Film Extra Interest Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f7f7f7;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .radio-group {
+      margin-top: 10px;
+    }
+
+    .radio-group label {
+      display: inline-block;
+      margin-right: 15px;
+      font-weight: normal;
+    }
+
+    #success-message {
+      color: green;
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 style="text-align:center;">Film Extra Participation Interest Form</h1>
+
+  <form id="interestForm">
+
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" placeholder="John Doe" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="example@email.com" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" placeholder="555-123-4567" required>
+
+    <label for="age">Age Range:</label>
+    <select id="age" required>
+      <option value="">-- Select One --</option>
+      <option value="under_18">Under 18</option>
+      <option value="18_24">18–24</option>
+      <option value="25_34">25–34</option>
+      <option value="35_49">35–49</option>
+      <option value="50_plus">50+</option>
+    </select>
+
+    <label for="experience">Acting Experience:</label>
+    <div class="radio-group">
+      <label><input type="radio" name="experience" value="None" required> None</label>
+      <label><input type="radio" name="experience" value="Some Training"> Some Training</label>
+      <label><input type="radio" name="experience" value="Experienced"> Experienced</label>
+      <label><input type="radio" name="experience" value="Professional"> Professional</label>
+    </div>
+
+    <label for="availability">Availability / Schedule:</label>
+    <textarea id="availability" rows="4" placeholder="List days/times you are available..." required></textarea>
+
+    <button type="submit">Submit Interest</button>
+
+    <div id="success-message"></div>
+  </form>
+
+  <script>
+    document.getElementById("interestForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent page refresh
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const availability = document.getElementById("availability").value;
+      const experience = document.querySelector("input[name='experience']:checked").value;
+
+      // Display success message
+      document.getElementById("success-message").innerText =
+        "Thank you, " + name + "! Your submission has been received.";
+
+      // Log values (simulate sending data to backend)
+      console.log({
+        name,
+        email,
+        phone,
+        availability,
+        experience
+      });
+    });
+  </script>
+
+</body>
+</html>
