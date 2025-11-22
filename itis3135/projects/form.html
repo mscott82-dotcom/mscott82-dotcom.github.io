@@ -61,9 +61,10 @@
   </style>
 </head>
 <div data-include="components/header.html"></div>
-<body>
+
   <main>
   <h2>Interested in playing a part in our next project?</h2>
+  <div class="spacer"></div>
   <p>Even if you have no experience acting at all, you could still be considered for a role.</p>
 
   <form id="interestForm">
@@ -87,7 +88,7 @@
       <option value="50_plus">50+</option>
     </select>
 
-    <label for="experience">Acting Experience:</label>
+    <label>Acting Experience:</label>
     <div class="radio-group">
       <label><input type="radio" name="experience" value="None" required> None</label>
       <label><input type="radio" name="experience" value="Some Training"> Some Training</label>
@@ -97,8 +98,9 @@
 
     <label for="availability">Availability / Schedule:</label>
     <textarea id="availability" rows="4" placeholder="List days/times you are available..." required></textarea>
-
+    <div class="bordertextyellow">
     <button type="submit">Submit Interest</button>
+    </div>
 
     <div id="success-message"></div>
   </form>
@@ -127,8 +129,9 @@
       });
     });
   </script>
+  
   </main>
-</body>
+
 <footer>
 <div data-include="components/footer.html"></div>
 </footer>
