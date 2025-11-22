@@ -9,13 +9,11 @@
     body {
       font-family: Arial, sans-serif;
       margin: 40px;
-      background-color: #f7f7f7;
     }
 
     form {
       max-width: 600px;
       margin: auto;
-      background: white;
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -108,7 +106,7 @@
 
   <script>
     document.getElementById("interestForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent page refresh
+      event.preventDefault(); 
 
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
@@ -116,11 +114,11 @@
       const availability = document.getElementById("availability").value;
       const experience = document.querySelector("input[name='experience']:checked").value;
 
-      // Display success message
+
       document.getElementById("success-message").innerText =
         "Thank you, " + name + "! Your submission has been received.";
 
-      // Log values (simulate sending data to backend)
+
       console.log({
         name,
         email,
