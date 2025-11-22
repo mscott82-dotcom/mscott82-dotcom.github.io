@@ -54,10 +54,10 @@ footer > nav, footer > a {
     }
 
     header {
-      background: #000;
       padding: 40px 20px;
       text-align: center;
       border-bottom: 2px solid #444;
+      
     }
 
     header h1 {
