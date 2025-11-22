@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
   <link rel="stylesheet" href="styles/style1.css">
+  <style>
+
+    .borderimage {
+      margin: 20px auto;
+      width: 250px;            /* Adjust size as needed */
+  aspect-ratio: 1 / 1;     /* Keeps it perfectly square */
+  border: 4px solid gold;  /* Border around the image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+
+    }
+  </style>
 </head>
 <div data-include="components/header.html"></div>
 <body>
@@ -12,7 +26,9 @@
   <p>A UNC Charlotte student led group made up of future filmmakers.</p>
   <p>Feel free to indulge in our previous projects displayed in the galleries above.</p>
   <p>If you find yourself wanting more, consider checking out our interest form, we are always in need of more talent!</p>
-
+  <div class="borderimage">
+  <img src="images/fts_render_home.png" alt="logo">
+  </div>
   <div data-include="components/footer.html"></div>
   <script src="scripts/HTMLInclude.min.js"></script>
 </body>

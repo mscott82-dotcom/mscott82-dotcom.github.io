@@ -26,7 +26,7 @@
 body {
     background-color: #0d1638;
     color: #FFCF9C;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
     padding-left: 5%;
     padding-right: 5%;
 }
@@ -49,7 +49,6 @@ footer > nav, footer > a {
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
       background-color: #111;
       color: white;
     }
@@ -118,4 +117,18 @@ footer {
     padding-top: 5px;
     
 
+}
+
+.headerimage, .headerimage img{
+    width: 60px;
+}
+.headerimage {
+    border: 2px solid gold;
+}
+
+.headerrow {
+padding-left: 15px;
+  display: flex;
+  align-items: center;    /* keeps text + image aligned vertically */
+  gap: 16px;              /* spacing between text and image */
 }
