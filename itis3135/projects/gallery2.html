@@ -11,10 +11,9 @@
       flex: 1;
       text-align: center;
     }
-    figcaption {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #555;
+    .caption {
+      padding-top: 25px;
+      opacity: 0;
     }
   </style>
 </head>
@@ -25,22 +24,40 @@
 
 
   <div class="container">
-    <figure>
+      <div class="img-container">
       <img src="images/49hour_2025.jpg" alt='Still from "Dice"' />
-      <figcaption>Dice - April 2025</figcaption>
-    </figure>
+      <div class="caption">Dice - April 2025</div>
+      </div>
 
-    <figure>
+      <div class="img-container">
       <img src="images/openyourdoor.png" alt='Still from "Open Your Door"' />
-      <figcaption>Open Your Door - October 2025</figcaption>
-    </figure>
+      <div class="caption">Open Your Door - October 2025</div>
+      </div>
 
-    <figure>
+      <div class="img-container">
       <img src="images/untited_2025.jpg" alt='Still from "Untitled"' />
-      <figcaption>Untitled - November 2025</figcaption>
-    </figure>
+      <div class="caption">Untitled - November 2025</div>
+      </div>
   </div>
+<script>
 
+  const containers = document.querySelectorAll(".img-container");
+
+  containers.forEach((container) => {
+    const img = container.querySelector("img");
+    const caption = container.querySelector(".caption");
+
+    container.addEventListener("mouseenter", () => {
+      img.style.transform = "scale(1.2)";
+      caption.style.opacity = 1;
+    });
+
+    container.addEventListener("mouseleave", () => {
+      img.style.transform = "scale(1)";
+      caption.style.opacity = 0;
+    });
+  });
+</script>
 
 
 <div data-include="components/footer.html"></div>

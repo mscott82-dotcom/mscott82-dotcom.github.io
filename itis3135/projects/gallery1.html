@@ -11,10 +11,9 @@
       flex: 1;
       text-align: center;
     }
-    figcaption {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #555;
+    .caption {
+      padding-top: 25px;
+      opacity: 0;
     }
   </style>
 </head>
@@ -26,21 +25,45 @@
 
   <div class="container">
     <figure>
+      <div class="img-container">
       <img src="images/49er_2024.jpg" alt='Still from the 49 Hour Challenge 2024"' />
-      <figcaption>49 Hour Challenge - September 2024</figcaption>
+      <div class="caption">49 Hour Challenge - September 2024</div>
+      </div>
     </figure>
 
     <figure>
-      <img src="images/carvercase.png" alt='Still from The "Carver Case"' />
-      <figcaption>The Carver Case - October 2024</figcaption>
+      <div class="img-container">
+      <img  src="images/carvercase.png" alt='Still from The "Carver Case"' />
+      <div class="caption">The Carver Case - October 2024</div>
+      </div>
     </figure>
 
     <figure>
-      <img src="images/untitledmusicvideo.jpg" alt='Still from Untitled Music Video' />
-      <figcaption>Untitled Music Video - December 2024</figcaption>
+      <div class="img-container">
+      <img  src="images/untitledmusicvideo.jpg" alt='Still from Untitled Music Video' />
+      <div class="caption">Untitled Music Video - December 2024</div>
+      </div>
     </figure>
   </div>
+<script>
 
+  const containers = document.querySelectorAll(".img-container");
+
+  containers.forEach((container) => {
+    const img = container.querySelector("img");
+    const caption = container.querySelector(".caption");
+
+    container.addEventListener("mouseenter", () => {
+      img.style.transform = "scale(1.2)";
+      caption.style.opacity = 1;
+    });
+
+    container.addEventListener("mouseleave", () => {
+      img.style.transform = "scale(1)";
+      caption.style.opacity = 0;
+    });
+  });
+</script>
 
 <div data-include="components/footer.html"></div>
 
