@@ -14,6 +14,7 @@
 
     <h2>About FTS Productions</h2>
   </div>
+  <div id="viewport"></div>
   <div class="spacer"></div>
   <div class="bordertext">
   <p>From the Stage Productions is a group of filmmakers local to Charlotte, comprised of students and members of the UNCC Film Club</p>
@@ -31,7 +32,26 @@
   </div>
   </main>
 
+<script>
+  const message = "Who are we? Who are we? Who are we? ";
+  const width = 20; 
+  let pos = 0;
 
+  function update() {
+    let segment = message.slice(pos, pos + width);
+
+    if (segment.length < width) {
+      segment += message.slice(0, width - segment.length);
+    }
+
+    document.getElementById("viewport").textContent = segment;
+
+    pos = (pos + 1) % message.length;
+  }
+
+  setInterval(update, 200); 
+  update();
+</script>
 <div data-include="components/footer.html"></div>
 
   <script src="scripts/HTMLInclude.min.js"></script>

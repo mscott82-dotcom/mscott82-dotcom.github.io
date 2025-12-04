@@ -24,6 +24,7 @@
 <div data-include="components/header.html"></div>
 
   <h2>Welcome to From the Stage Productions</h2>
+  <div id="viewport"></div>
   <div class="spacer"></div>
   <div class="bordertext">
   <p>A UNC Charlotte student led group made up of future filmmakers.</p>
@@ -36,6 +37,26 @@
   <footer>
 <div data-include="components/footer.html"></div>
 </footer>
+<script>
+  const message = "Welcome!       Welcome!       Welcome! ";
+  const width = 40; 
+  let pos = 0;
+
+  function update() {
+    let segment = message.slice(pos, pos + width);
+
+    if (segment.length < width) {
+      segment += message.slice(0, width - segment.length);
+    }
+
+    document.getElementById("viewport").textContent = segment;
+
+    pos = (pos + 1) % message.length;
+  }
+
+  setInterval(update, 200); 
+  update();
+</script>
   <script src="scripts/HTMLInclude.min.js"></script>
 
 </html>

@@ -63,7 +63,8 @@
 <div data-include="components/header.html"></div>
 
   <main>
-  <h2>Interested in playing a part in our next project?</h2>
+  <h2>Interest Form</h2>
+  <div id="viewport"></div>
   <div class="spacer"></div>
   <p>Even if you have no experience acting at all, you could still be considered for a role.</p>
 
@@ -131,7 +132,26 @@
   </script>
   
   </main>
+<script>
+  const message = "Interested in playing a part in our next project? ";
+  const width = 60; 
+  let pos = 0;
 
+  function update() {
+    let segment = message.slice(pos, pos + width);
+
+    if (segment.length < width) {
+      segment += message.slice(0, width - segment.length);
+    }
+
+    document.getElementById("viewport").textContent = segment;
+
+    pos = (pos + 1) % message.length;
+  }
+
+  setInterval(update, 200); 
+  update();
+</script>
 <footer>
 <div data-include="components/footer.html"></div>
 </footer>

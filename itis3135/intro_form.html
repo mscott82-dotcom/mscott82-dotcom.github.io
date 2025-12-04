@@ -1,153 +1,161 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
 <head>
-    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="styles/default.css">
-    <title>
-        ITIS 3135 | Matthew Scott's | Magnificent Sealion | Intro Form
-    </title>
-    <style>
-        .Block {
-            border: 1px green solid;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matthew Scotts's Magnificent Sealion Introduction Form</title>
+  <link rel="stylesheet" href="styles/default.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 
-            display:flex;
-            flex-direction: column;
-            margin-bottom: 20px;
-        }
-        .divider {
-            margin: 25px;
-            border: 1px black solid;
-
-        }
-        .ButtonBlock {
-            display:  flex;
-            margin: 30px;
-            flex-direction: column;
-            width: 30%;
-        }
-        form {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            padding-left: 25%;
-            padding-right: 25%;
-        }
-    </style>
 </head>
-    <body>
-        <header>
-        <div data-include="components/header.html"></div>
-        </header>
-        <main>
-            <h2>Intro Form</h2>
-            <h3>Please submit the form below.</h3>
-            <form id="form">
-            <div class="Block">
-            <label>First Name*</label>
-            <input type="text" name="firstName" required value="Matthew" placeholder="Enter your first name">
+<body>
+  <div data-include="components/header.html"></div>
+  <main>
+    <div id="formHeadings">
+      <h2 class="center-align">Introduction Form</h2>
+    </div>
 
-            <label>Middle Name or Initial</label>
-            <input type="text" name="middleName" value="C." placeholder="Enter your middle name or initial">
+    <form id="introForm">
+      <fieldset>
+        <legend>Basic Information</legend>
+        <label>First Name: <input type="text" id="firstName" value="Matthew" placeholder="Enter your first name" required></label><br>
+        <label>Middle Name (optional): <input type="text" id="middleName" value="C" placeholder="Enter your middle initial"></label><br>
+        <label>Nickname/Preferred Name (optional): <input type="text" id="nickname" placeholder="Enter your nickname"></label><br>
+        <label>Last Name: <input type="text" id="lastName" value="Scott" placeholder="Enter your last name" required></label><br>
+        <label>
+          <input type="checkbox" id="ackCheckbox" required>
+          I acknowledge that this is my work and I understand the academic integrity policy.
+        </label>
+      </fieldset>
 
-            <label>Nickname / Preferred Name</label>
-            <input type="text" name="nickname" value="Matt" placeholder="Enter your nickname">
+      <fieldset>
+        <legend>Mascot Info</legend>
+        <label>Mascot Adjective: <input type="text" id="mascotAdj" value="Magnificent" placeholder="Enter a descriptive adjective" required></label><br>
+        <label>Mascot Animal: <input type="text" id="mascotAnimal" value="Sealion" placeholder="Enter a mascot animal" required></label><br>
+        <label>Divider: <input type="text" id="divider" value="|" placeholder="Enter a divider symbol" required></label><br>
+      </fieldset>
 
-            <label>Last Name*</label>
-            <input type="text" name="lastName" required value="Scott" placeholder="Enter your last name">
-            </div>
-            <div class="Block">
-            <label>Acknowledgment Statement*</label>
-            <input type="text" name="ackStatement" required value="I acknowledge this information is true." placeholder="Type acknowledgment statement">
+      <fieldset>
+        <legend>Image</legend>
+        <label>Upload Image:
+          <input type="file" id="picture" accept="image/*">
+        </label><br>
+        <label>Caption:
+          <input type="text" id="picCaption" value="Fall 2023" placeholder="Enter a caption for your picture" required>
+        </label>
+      </fieldset>
 
-            <label>Acknowledgment Date*</label>
-            <input type="date" name="ackDate" required value="2025-10-26">
-            </div>
-            <div class="Block">
-            <label>Mascot Adjective*</label>
-            <input type="text" name="mascotAdj" required value="Magnificent" placeholder="Enter a describing word">
+      <fieldset>
+        <legend>Personal</legend>
+        <label>Personal Background:
+          <textarea id="personalBg" required placeholder="Write a brief personal background">I like spending time outside, with friends, and with family.</textarea>
+        </label><br>
+        <label>Professional Background:
+          <textarea id="profBg" required placeholder="Write your professional background">Worked an IT Internship during the summer, mostly worked with server management systems such as Active Directory and Microsoft Intune.</textarea>
+        </label><br>
+        <label>Academic Background:
+          <textarea id="acadBg" required placeholder="Write your academic background">Junior, Class of 2027 - Computer Science major with a concentration in CyberSecurity.</textarea>
+        </label>
+      </fieldset>
 
-            <label>Mascot Animal*</label>
-            <input type="text" name="mascotAnimal" required value="Sealion" placeholder="Enter an animal">
-            </div>
-            <div class="divider"></div>
-            <input type="text" name="divider" required value="~" placeholder="Enter a divider (|, ~, ♥️, etc.)">
-            <div class="Block">
-            <label>Picture*</label>
-            <input type="file" name="picture" accept="image/*">
-            <img src="https://via.placeholder.com/150" alt="Default Image">
+      <fieldset>
+        <legend>Quote</legend>
+        <label>Quote:
+          <input type="text" id="quote" value="Be the change you want to see in the world" placeholder="Enter a quote" required>
+        </label><br>
+        <label>Quote Author:
+          <input type="text" id="quoteAuthor" value="Gandhi" placeholder="Enter the quote author" required>
+        </label>
+      </fieldset>
 
-            <label>Picture Caption*</label>
-            <input type="text" name="caption" required value="My professional photo" placeholder="Enter caption for the picture">
-            </div>
-            <div class="Block">
-            <label>Personal Statement*</label>
-            <textarea name="personalStatement" required placeholder="Write your personal statement">I'm a dedicated student passionate about technology and learning.</textarea>
+      <fieldset id="coursesField">
+        <legend>Courses</legend>
 
-            <label>7 Main Bullets (Personal Background, etc)*</label>
-            <textarea name="mainBullets" required placeholder="List your main bullet points">Personal Background, Education, Interests, Goals, Skills, Values, Fun Facts</textarea>
-            </div>
-            <h4>Courses</h4>
-            <div id="courses">
-            <div class="course">
-                <div class="Block">
-                <label>Department*</label>
-                <input type="text" name="dept" required value="ITIS" placeholder="e.g. CS">
+        <div class="course">
+          <input type="text" class="dept" value="ITSC" placeholder="Department" required>
+          <input type="text" class="num" value="3688" placeholder="Course number" required>
+          <input type="text" class="name" value="Computers and their impact on society" placeholder="Course name" required>
+          <input type="text" class="reason" placeholder="Reason for taking">
+          <button type="button" class="deleteCourse">Delete</button>
+        </div>
 
-                <label>Number*</label>
-                <input type="text" name="courseNum" required value="3135" placeholder="e.g. 101">
+        <div class="course">
+          <input type="text" class="dept" value="ITSC" placeholder="Department" required>
+          <input type="text" class="num" value="3160" placeholder="Course number" required>
+          <input type="text" class="name" value="Database design and implementation" placeholder="Course name" required>
+          <input type="text" class="reason" placeholder="Reason for taking">
+          <button type="button" class="deleteCourse">Delete</button>
+        </div>
 
-                <label>Name*</label>
-                <input type="text" name="courseName" required value=" Front End Web App Development" placeholder="e.g. Front End Web App Development">
+        <div class="course">
+          <input type="text" class="dept" value="ITIS" placeholder="Department" required>
+          <input type="text" class="num" value="3135" placeholder="Course number" required>
+          <input type="text" class="name" value="Front end web App Development" placeholder="Course name" required>
+          <input type="text" class="reason" placeholder="Reason for taking">
+          <button type="button" class="deleteCourse">Delete</button>
+        </div>
 
-                <label>Reason*</label>
-                <input type="text" name="reason" required value="To learn Front-End Web Dev." placeholder="Why did you choose this course?">
-            </div>
-            </div>
-            </div>
-            <div class="ButtonBlock">
-            <button type="button" id="addCourse">Add Course</button>
-            </div>
-            <div class="Block">
-            <label>Quote*</label>
-            <input type="text" name="quote" required value="The only limit is your mind." placeholder="Enter your favorite quote">
+        <div class="course">
+          <input type="text" class="dept" value="MATH" placeholder="Department" required>
+          <input type="text" class="num" value="2164" placeholder="Course number" required>
+          <input type="text" class="name" value="Matrices and Linear Algebra" placeholder="Course name" required>
+          <input type="text" class="reason" placeholder="Reason for taking">
+          <button type="button" class="deleteCourse">Delete</button>
+        </div>
 
-            <label>Quote Author*</label>
-            <input type="text" name="quoteAuthor" required value="Unknown" placeholder="Enter the author of the quote">
+        <div class="course">
+          <input type="text" class="dept" value="ITSC" placeholder="Department" required>
+          <input type="text" class="num" value="3155" placeholder="Course number" required>
+          <input type="text" class="name" value="Software engineering" placeholder="Course name" required>
+          <input type="text" class="reason" placeholder="Reason for taking">
+          <button type="button" class="deleteCourse">Delete</button>
+        </div>
 
-            <label>Funny Thing (optional)</label>
-            <input type="text" name="funnyThing" value="I can create webpages" placeholder="Enter something funny">
+        <button type="button" id="addCourse">Add Course</button>
+      </fieldset>
 
-            <label>Something I would like to share (optional)</label>
-            <input type="text" name="share" value="I love compsci and nature." placeholder="Enter something you'd like to share">
+      <fieldset>
+  <legend>Footer</legend>
+  <label>CLT Web <input type="url" id="linkCLTWeb" value="https://webpages.charlotte.edu/mscott82/" placeholder="Enter CLT Web URL" required></label><br>
+  <label>GitHub <input type="url" id="linkGithub" value="https://github.com/mscott82-dotcom" placeholder="Enter GitHub URL" required></label><br>
+  <label>GitHub.io <input type="url" id="linkGithubIO" value="http://mscott82-dotcom.github.io" placeholder="Enter GitHub.io URL" required></label><br>
+  <label>FreeCodeCamp <input type="url" id="linkFCC" value="https://www.freecodecamp.org/mscott82" placeholder="Enter FreeCodeCamp URL" required></label><br>
+  <label>Codecademy <input type="url" id="linkCodecademy" value="https://www.codecademy.com/profiles/mscott82" placeholder="Enter Codecademy URL" required></label><br>
+  <label>LinkedIn <input type="url" id="linkLinkedIn" value="https://www.linkedin.com/in/mscott82/" placeholder="Enter LinkedIn URL" required></label>
+</fieldset>
 
-            <label>5 Links*</label>
-            <textarea name="links" required placeholder="Add up to 5 links separated by commas">https://linkedin.com/in/matthewscott, https://github.com/mscott82-dotcom</textarea>
-            </div>
-            <div>
-            <div class="ButtonBlock">
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-            <button type="button" id="clearBtn">Clear</button>
+      <fieldset>
+        <legend>Extras (Optional)</legend>
+        <label>Funny thing:
+          <input type="text" id="funnyThing" placeholder="Enter something funny">
+        </label><br>
+        <label>Something I would like to share:
+          <input type="text" id="shareSomething" placeholder="Optional">
+        </label>
+      </fieldset>
 
-            </div>
-            </div>
-        </form>
+      <div class="buttons center-align">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button" id="clearForm">Clear</button>
+        <button type="button" id="generateJSON">Generate JSON</button>
+      </div>
+    </form>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
 
-        <div id="output"></div>
-
-        <script src="scripts/introduction.js"></script>
-        </main>
-        <footer>
-            <div data-include="components/footer.html"></div>
-        </footer>
-        <script>
-            document.getElementById("validation_link_html").setAttribute("href","https://jigsaw.w3.org/check?uri=" + location.href);
-                document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator/check?uri=" + location.href);
-        </script>
-        <script src="scripts/HTMLInclude.min.js"></script>
-        <script src="scripts/generate_html.js"></script>
-        <script src="scripts/generate_json.js"></script>
-        <div class="divider"></div>
-    </body>
+    <div id="resultContainer"></div>
+  </main>
+  <script src="scripts/HTMLInclude.js"></script>
+  <script src="scripts/introduction.js"></script>
+  <script src="scripts/generate_html.js"></script>
+  <script src="scripts/generate_json.js"></script>
+</body>
 </html>
-

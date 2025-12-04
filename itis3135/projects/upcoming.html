@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="styles/style1.css">
   <title>Upcoming Projects</title>
   <style>
+    
 
     figure {
       flex: 1;
@@ -25,6 +26,7 @@
 
 
   <h2>Upcoming Events & Projects</h2>
+  <div id="viewport"></div>
   <div class="spacer"></div>
   <div class="bordertext">
   <p>Due to our involvement with the UNCC Film club, we are have access to a multitude of great opportunities to make connections and to have our projects shown. One of those being the Independent Picture House located in the City of Charlotte. Every April, a select number of chosen films will be displayed there!</p>
@@ -42,5 +44,27 @@
 <footer>
 <div data-include="components/footer.html"></div>
 </footer>
+
+<script>
+  const message = "Whats new?       Whats new?       Whats new? ";
+  const width = 40; 
+  let pos = 0;
+
+  function update() {
+    let segment = message.slice(pos, pos + width);
+
+    if (segment.length < width) {
+      segment += message.slice(0, width - segment.length);
+    }
+
+    document.getElementById("viewport").textContent = segment;
+
+    pos = (pos + 1) % message.length;
+  }
+
+  setInterval(update, 200); 
+  update();
+</script>
+
   <script src="scripts/HTMLInclude.min.js"></script>
 </html>

@@ -7,6 +7,7 @@
         width: 80%;
     }
 
+
 }
 
 @media only screen and (resolution: 300dpi) {
@@ -14,12 +15,14 @@
         width: 90%;
     }
 
+
 }
 
 @media only screen and (min-width: 992px) {
     main{
         width: 100%;
     }
+
 }
 
 
@@ -36,7 +39,7 @@ h1 {
     color: #CA054D;
     text-align: center;
 }
-h2 {
+h2, #viewport {
     color: #c54e7a;
     text-align: center;
 }
@@ -168,3 +171,13 @@ padding-left: 15px;
       max-width: 150px;        
       max-height: 35px;
     }
+#viewport {
+  display: flex;
+  justify-content: center;
+  border-left: 1px solid yellow;
+  border-right: 1px solid yellow;
+      overflow: hidden;         
+      white-space: nowrap; 
+      margin-left: 25%;
+      margin-right: 25%;
+}

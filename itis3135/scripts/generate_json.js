@@ -1,74 +1,84 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("form");
-  const buttonBlock = form.querySelector(".ButtonBlock:last-of-type");
+  let jsonBtn = document.getElementById("generateJSON");
+  if (!jsonBtn) {
+    jsonBtn = document.createElement("button");
+    jsonBtn.type = "button";
+    jsonBtn.id = "generateJSON";
+    jsonBtn.textContent = "Generate JSON";
+    document.querySelector(".buttons").appendChild(jsonBtn);
+  }
+
+  jsonBtn.addEventListener("click", () => {
+
+    const firstName = document.getElementById("firstName").value.trim();
+    const preferredName = document.getElementById("nickname").value.trim();
+    const middleInitial = document.getElementById("middleName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+    const divider = document.getElementById("divider").value.trim();
+    const mascotAdjective = document.getElementById("mascotAdj").value.trim();
+    const mascotAnimal = document.getElementById("mascotAnimal").value.trim();
+    const image = "images/selfimage.jpg"; 
+    const imageCaption = document.getElementById("picCaption").value.trim();
+    const personalBackground = document.getElementById("personalBg").value.trim();
+    const professionalBackground = document.getElementById("profBg").value.trim();
+    const academicBackground = document.getElementById("acadBg").value.trim();
+    const personalStatement = document.getElementById("quote").value.trim();
+    const quoteAuthor = document.getElementById("quoteAuthor").value.trim();
 
 
-  const generateJSONBtn = document.createElement("button");
-  generateJSONBtn.type = "button";
-  generateJSONBtn.id = "generateJSON";
-  generateJSONBtn.textContent = "Generate JSON";
-  buttonBlock.appendChild(generateJSONBtn);
-
-  generateJSONBtn.addEventListener("click", () => {
-    const formData = new FormData(form);
+    const courses = [...document.querySelectorAll(".course")].map((course) => ({
+      department: course.querySelector(".dept").value.trim(),
+      number: course.querySelector(".num").value.trim(),
+      name: course.querySelector(".name").value.trim(),
+      reason: course.querySelector(".reason").value.trim()
+    }));
 
 
-    const data = {
-      firstName: formData.get("firstName"),
-      middleName: formData.get("middleName"),
-      nickname: formData.get("nickname"),
-      lastName: formData.get("lastName"),
-      ackStatement: formData.get("ackStatement"),
-      ackDate: formData.get("ackDate"),
-      mascotAdj: formData.get("mascotAdj"),
-      mascotAnimal: formData.get("mascotAnimal"),
-      divider: formData.get("divider"),
-      caption: formData.get("caption"),
-      personalStatement: formData.get("personalStatement"),
-      mainBullets: formData.get("mainBullets")
-        ? formData.get("mainBullets").split(",").map(b => b.trim())
-        : [],
-      quote: formData.get("quote"),
-      quoteAuthor: formData.get("quoteAuthor"),
-      funnyThing: formData.get("funnyThing"),
-      share: formData.get("share"),
-      links: formData.get("links")
-        ? formData.get("links").split(",").map(l => l.trim())
-        : [],
+    const links = [
+      { name: "CLT Web", href: document.getElementById("linkCLTWeb").value.trim() },
+      { name: "GitHub", href: document.getElementById("linkGithub").value.trim() },
+      { name: "GitHub Page", href: document.getElementById("linkGithubIO").value.trim() },
+      { name: "freeCodeCamp", href: document.getElementById("linkFCC").value.trim() },
+      { name: "Codecademy", href: document.getElementById("linkCodecademy").value.trim() },
+      { name: "LinkedIn", href: document.getElementById("linkLinkedIn").value.trim() }
+    ];
+
+
+    const jsonData = {
+      firstName,
+      preferredName,
+      middleInitial,
+      lastName,
+      divider,
+      mascotAdjective,
+      mascotAnimal,
+      image,
+      imageCaption,
+      personalStatement,
+      personalBackground,
+      professionalBackground,
+      academicBackground,
+      subjectBackground: "", 
+      primaryComputer: "", 
+      courses,
+      links
     };
 
 
-    const jsonOutput = JSON.stringify(data, null, 2);
+    const jsonOutput = JSON.stringify(jsonData, null, 2);
 
 
-    const main = document.querySelector("main");
-    main.innerHTML = `
-      <h2>Introduction JSON</h2>
-      <section>
-        <pre><code class="language-json">${escapeHTML(jsonOutput)}</code></pre>
-      </section>
-    `;
+    document.querySelector("h2").textContent = "Introduction JSON";
+    document.getElementById("introForm").remove();
 
+    const resultContainer = document.getElementById("resultContainer");
+    resultContainer.innerHTML = `
+<pre><code class="language-json">${jsonOutput
+  .replace(/&/g, "&amp;")
+  .replace(/</g, "&lt;")
+  .replace(/>/g, "&gt;")}</code></pre>`;
 
-    const script = document.createElement("script");
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js";
-    script.onload = () => hljs.highlightAll();
-    document.body.appendChild(script);
-
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css";
-    document.head.appendChild(link);
+    // Apply highlight.js styling
+    hljs.highlightAll();
   });
-
-
-  function escapeHTML(str) {
-    return str
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
-  }
 });
