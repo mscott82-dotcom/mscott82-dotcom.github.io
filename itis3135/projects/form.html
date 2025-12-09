@@ -24,11 +24,11 @@
     }
 
     input, textarea, select {
-      width: 100%;
-      padding: 10px;
+
+
       margin-top: 5px;
       border: 1px solid #ccc;
-      border-radius: 5px;
+
     }
 
     button {
@@ -115,19 +115,19 @@
       const phone = document.getElementById("phone").value;
       const availability = document.getElementById("availability").value;
       const experience = document.querySelector("input[name='experience']:checked").value;
-      if (experience == "None") {
+      if (experience === "None") {
         document.getElementById("success-message").innerText =
         "Thank you, " + name + "! Your submission has been received. Even with no experience, you can still play a role as an extra.";
       }
-      if (experience == "Some Training") {
+      if (experience === "Some Training") {
         document.getElementById("success-message").innerText =
         "Thank you, " + name + "! Your submission has been received. With some training, you could expect be featured as a side character or an extra.";
       }
-      if (experience == "Experienced") {
+      if (experience === "Experienced") {
         document.getElementById("success-message").innerText =
         "Thank you, " + name + "! Your submission has been received. With experience, you could expect to play a wide variety of roles.";
       }
-      if (experience == "Professional") {
+      if (experience === "Professional") {
         document.getElementById("success-message").innerText =
         "Thank you, " + name + "! Your submission has been received. As a professional, you could expect to play a main role.";
       }
@@ -164,7 +164,6 @@
   setInterval(update, 200); 
   update();
 </script>
-  <script src="scripts/interestform.js"></script>
 <footer>
 <div data-include="components/footer.html"></div>
 </footer>
